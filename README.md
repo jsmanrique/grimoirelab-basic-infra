@@ -36,7 +36,7 @@ $ docker run -v /absolute-path-to/settings/data-sources.yml:/settings/data-sourc
 
 # Contributing
 
-I am not a technical person, so I am self-learning Python, Docker and many other things to create this. The aim for this project is to have a simple way to set up a run simple Grimoire Lab analysis. I am sure you can find better ways to do this, so any help is welcome.If you wanna help, [Grimoire Lab](http://grimoirelab.github.io) is the perfect place to do it.
+I am not a technical person, so I am self-learning Python, Docker and many other things to create this. The aim for this project is to have a simple way to set up and run a simple **Grimoire Lab** analysis. I am sure you can find better ways to do this, so any help is welcome.If you wanna help, [Grimoire Lab](http://grimoirelab.github.io) is the perfect place to do it.
 
 # License
 
