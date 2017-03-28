@@ -1,6 +1,6 @@
 # Grimoire basic demos environment
 
-This repository contains some basic infrastructure to set up [Grimorie Lab](http://grimoirelab.github.io) analysis. By basic I mean, just getting data from some repositories and store them in a running elasticsearch to visulize it using kibana.
+This repository contains some *basic infrastructure* to set up [Grimorie Lab](http://grimoirelab.github.io) analysis. By *basic* I mean, just getting data from some repositories and store them in a running elasticsearch to visulize it using kibana.
 
 ## What is missing?
 
