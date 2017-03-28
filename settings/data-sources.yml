@@ -1,0 +1,20 @@
+# Data sources config file for simple Grimoire demos #
+sources:                        # Data Sources
+  # meetup:
+  #   repositories:               # list of repos
+  #     - Madrid-Python-Meetup
+  #     - Node-js-Madrid
+  #   token: 1234abc              # Meetup API Token
+  git:
+    repositories:               # list of repos
+      - https://github.com/grimoirelab/GrimoireELK.git
+  # github-org:
+  #   repositories:
+  #     - grimoirelab
+  #   token: 1234abc              # GitHub API Token
+environment:                    # Environment Variables
+  name: Test                    # Project name
+  es:
+    host: localhost             # Elasticsearch host
+    port: 9200                  # Elasticsearch port
+    user:                       # Elasticsearch port

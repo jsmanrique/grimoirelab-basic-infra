@@ -1,0 +1,54 @@
+version: '2'
+services:
+  elasticsearch:
+    # Doc:
+    image: docker.elastic.co/elasticsearch/elasticsearch:5.2.2
+    container_name: elasticsearch
+    environment:
+      - cluster.name=cluster-es
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - xpack.security.enabled=false
+      - xpack.monitoring.enabled=false
+      - xpack.graph.enabled=false
+      - xpack.watcher.enabled=false
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+      nofile:
+        soft: 65536
+        hard: 65536
+    mem_limit: 1g
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+    # networks:
+    #   - esnet
+  kibana:
+    # Doc: https://www.elastic.co/guide/en/kibana/current/_configuring_kibana_on_docker.html
+    image: docker.elastic.co/kibana/kibana:5.2.2
+    container_name: kibana
+    environment:
+      # - xpack.security.enabled=false
+      # - xpack.monitoring.enabled=false
+      # - xpack.graph.enabled=false
+      # - xpack.watcher.enabled=false
+      # - xpack.reporting.enabled=false
+      # - logging.quite=true
+      XPACK_GRAPH_ENABLED: "False"
+      XPACK_WATCHER_ENABLED: "False"
+      XPACK_SECURITY_ENABLED: "False"
+      XPACK_MONITORING_ENABLED: "False"
+      LOGGING_QUIET: "True"
+    ports:
+      - 5601:5601
+
+volumes:
+  esdata:
+    driver: local
+
+# networks:
+#   esnet:
+#     driver: bridge
