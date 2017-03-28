@@ -43,7 +43,7 @@ def git(sources, env_vars):
 
     for repository in sources['repositories']:
         cmd = cmd_gral_part + ' ' + repository
-        print(cmd)
+        os.system(cmd)
 
 def github(sources, env_vars):
 
@@ -62,14 +62,14 @@ def github(sources, env_vars):
         for repo in gh_organization.iter_repos():
             cmd_github_part = '--owner '+ organization + ' --repository ' + repo.name + ' -t ' + sources['token']
             cmd = cmd_gral_part + cmd_github_part
-            print(cmd)
+            os.system(cmd)
 
 def meetup(sources, env_vars):
     cmd_gral_part = cmd_composer(env_vars, 'meetup')
 
     for repository in sources['repositories']:
         cmd = cmd_gral_part + ' ' + repository + ' -t ' + sources['token'] + ' --tag ' + repository
-        print(cmd)
+        os.system(cmd)
 
 def exec_analysis(config_data):
 
