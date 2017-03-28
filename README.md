@@ -2,6 +2,12 @@
 
 This repository contains some basic infrastructure to set up [Grimorie Lab](http://grimoirelab.github.io) analysis. By basic I mean, just getting data from some repositories and store them in a running elasticsearch to visulize it using kibana.
 
+## What is missing?
+
+Some features from the whole **Grimoire Lab** environment are not provided by this basic infraestructure:
+* [Sorting Hat](https://github.com/grimoirelab/sortinghat) related features: merging people multiple identities to unify people profiles and managing people affiliation information to show activity by organization
+* Some backends might be missing
+
 ## Basic set-up
 
 It contains a `docker-compose.yml` basic file to set up an elasticsearch and kibana listening in default ports (9200 and 5601).
