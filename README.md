@@ -32,9 +32,9 @@ Change the `settings/data-sources.yml` file to fit your needs, or produce a new 
 
 **Remember**: You need an elasticsearch up and listening in the host and port defined in `data-sources.yml` file.
 
-To run the `grimoirelab-basic-infra`, you need to mount the `data-source.yml` as container's volume:
+If you have an elasticsearch running in localhost, in its default port (`9200`), run the `grimoirelab-basic-infra` as:
 ```
-$ docker run -v /absolute-path-to/data-sources.yml:/settings/data-sources.yml -ti jsmanrique/grimoirelab-basic-infra
+$ docker run -v /absolute-path-to/data-sources.yml:/settings/data-sources.yml --net=host -ti jsmanrique/grimoirelab-basic-infra
 ```
 
 ### Supported data sources
