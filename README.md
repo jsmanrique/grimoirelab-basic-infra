@@ -21,7 +21,7 @@ $ docker-compose -d up
 It also contains a `Dockerfile` to build a docker image to run the analysis. If you want to test it, just build it with:
 
 ```
-$ docker build -t grimoire-demo .
+$ docker build -t grimoirelab-basic-infra .
 ```
 
 There is already an [image in Docker Hub](https://hub.docker.com/r/jsmanrique/grimoirelab-basic-infra/).
