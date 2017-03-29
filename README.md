@@ -5,9 +5,9 @@ This repository contains some *basic infrastructure* to set up [Grimorie Lab](ht
 ## What is missing?
 
 Some features from the whole **Grimoire Lab** environment are not provided by this basic infraestructure:
-* [Sorting Hat](https://github.com/grimoirelab/sortinghat) related features: merging people multiple identities to unify people profiles and managing people affiliation information to show activity by organization
-* Some backends might be missing
-* No data auto-update
+* [Sorting Hat](https://github.com/grimoirelab/sortinghat) related features: merging people multiple identities to unify people profiles and managing people affiliation information to show activity by organization.
+* Some backends might be missing.
+* No data auto-update.
 
 ## Basic set-up
 
@@ -24,7 +24,7 @@ It also contains a `Dockerfile` to build a docker image to run the analysis. If 
 $ docker build -t grimoire-demo .
 ```
 
-There is already an [image in Docker Hub](https://hub.docker.com/r/jsmanrique/grimoirelab-basic-infra/)
+There is already an [image in Docker Hub](https://hub.docker.com/r/jsmanrique/grimoirelab-basic-infra/).
 
 
 ## How to run an anlysis
