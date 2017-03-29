@@ -18,21 +18,22 @@ Run it with:
 $ docker-compose -d up
 ``` 
 
-It also contains a `Dockerfile` to build a docker image to run the analysis. Just build it with:
+It also contains a `Dockerfile` to build a docker image to run the analysis. If you want to test it, just build it with:
 
 ```
 $ docker build -t grimoire-demo .
 ```
 
-TODO: Publish it in docker-hub
+There is already an [image in Docker Hub](https://hub.docker.com/r/jsmanrique/grimoirelab-basic-infra/)
+
 
 ## How to run an anlysis
 
 Change the `settings/data-sources.yml` file to fit your needs.
 
-Run the `grimoire-demo`. You need to mount the `settings/data-source.yml` as container's volume:
+To run the `grimoirelab-basic-infra`, you need to mount the `settings/data-source.yml` as container's volume:
 ```
-$ docker run -v /absolute-path-to/settings/data-sources.yml:/settings/data-source.yml -ti grimoire-demo
+$ docker run -v /absolute-path-to/data-sources.yml:/settings/data-sources.yml -ti jsmanrique/grimoirelab-basic-infra
 ```
 
 ### Supported data sources
