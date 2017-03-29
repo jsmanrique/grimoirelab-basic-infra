@@ -88,7 +88,7 @@ def exec_analysis(config_data):
         get_data(data_sources[backend], env_vars)
 
 def cmd_composer(env_vars, backend):
-    cmd_common = "p2o.py --enrich --no_incremental --no-cache --debug --index "
+    cmd_common = "p2o.py --enrich --no_incremental --debug --index "
     cmd_rich_index_name = env_vars['name'] + '_' + backend
     cmd_raw_index_name = cmd_rich_index_name + '_raw '
     cmd_es_part = ' -e http://' + env_vars['es']['host'] + ':' + str(env_vars['es']['port'])
