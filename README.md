@@ -1,12 +1,13 @@
 # Grimoire basic demos environment
 
-This repository contains some *basic infrastructure* to set up [Grimorie Lab](http://grimoirelab.github.io) analysis. By *basic* I mean, just getting data from some repositories and store them in a running elasticsearch to visulize it using kibana.
+This repository contains some *basic infrastructure* to set up [Grimorie Lab](http://grimoirelab.github.io) analysis. By *basic* I mean, just getting data from some repositories, storing them in a running elasticsearch, and visualizing them using kibana.
 
 ## What is missing?
 
 Some features from the whole **Grimoire Lab** environment are not provided by this basic infraestructure:
 * [Sorting Hat](https://github.com/grimoirelab/sortinghat) related features: merging people multiple identities to unify people profiles and managing people affiliation information to show activity by organization
 * Some backends might be missing
+* No data auto-update
 
 ## Basic set-up
 
@@ -42,7 +43,13 @@ $ docker run -v /absolute-path-to/settings/data-sources.yml:/settings/data-sourc
 
 # Contributing
 
-I am not a technical person, so I am self-learning Python, Docker and many other things to create this. The aim for this project is to have a simple way to set up and run a simple **Grimoire Lab** analysis. I am sure you can find better ways to do this, so any help is welcome.If you wanna help, [Grimoire Lab](http://grimoirelab.github.io) is the perfect place to do it.
+I am not a 100% technical person, so I am self-learning Python, Docker and many other things to create this. 
+
+The aim for this project is to have a simple way to set up and run a simple **Grimoire Lab** analysis for some demo purposes. I am sure you can find better ways to do this, so any help is welcome.
+
+If you wanna help on the [Grimoire Lab](http://grimoirelab.github.io) side, check its [repositories](https://github.com/grimoirelab). It's **100% free, libre, open source software**.
+
+Bitergia folks are working on [training materials for Grimoire Lab](https://www.gitbook.com/book/jgbarah/grimoirelab-training/details). Worth reading. Contributions are welcome too ;-)
 
 # License
 
