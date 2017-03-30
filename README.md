@@ -21,19 +21,20 @@ $ docker-compose -d up
 It also contains a `Dockerfile` to build a docker image to run the analysis. If you want to test it, just build it with:
 
 ```
-$ docker build -t grimoire-demo .
+$ docker build -t grimoirelab-basic-infra .
 ```
 
 There is already an [image in Docker Hub](https://hub.docker.com/r/jsmanrique/grimoirelab-basic-infra/).
 
-
 ## How to run an anlysis
 
-Change the `settings/data-sources.yml` file to fit your needs.
+Change the `settings/data-sources.yml` file to fit your needs, or produce a new one.
 
-To run the `grimoirelab-basic-infra`, you need to mount the `settings/data-source.yml` as container's volume:
+**Remember**: You need an elasticsearch up and listening in the host and port defined in `data-sources.yml` file.
+
+If you have an elasticsearch running in localhost, in its default port (`9200`), run the `grimoirelab-basic-infra` as:
 ```
-$ docker run -v /absolute-path-to/data-sources.yml:/settings/data-sources.yml -ti jsmanrique/grimoirelab-basic-infra
+$ docker run -v /absolute-path-to/data-sources.yml:/settings/data-sources.yml --net=host -ti jsmanrique/grimoirelab-basic-infra
 ```
 
 ### Supported data sources
@@ -44,9 +45,7 @@ $ docker run -v /absolute-path-to/data-sources.yml:/settings/data-sources.yml -t
 
 # Contributing
 
-I am not a 100% technical person, so I am self-learning Python, Docker and many other things to create this. 
-
-The aim for this project is to have a simple way to set up and run a simple **Grimoire Lab** analysis for some demo purposes. I am sure you can find better ways to do this, so any help is welcome.
+I am not a 100% technical person, so I am self-learning Python, Docker and many other things to create this. The aim for this project is to have a simple way to set up and run a simple **Grimoire Lab** analysis for some demo purposes. I am sure you can find better ways to do this, so any help is welcome. There are bugs, and many improvements can be done. Feel free to [submit them](https://github.com/jsmanrique/grimoirelab-basic-infra/issues).
 
 If you wanna help on the [Grimoire Lab](http://grimoirelab.github.io) side, check its [repositories](https://github.com/grimoirelab). It's **100% free, libre, open source software**.
 
