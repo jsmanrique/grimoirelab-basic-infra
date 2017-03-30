@@ -51,18 +51,23 @@ def github(sources, env_vars):
 
     git_repositories = {'repositories':[]}
 
+    gh = github3.GitHub()
+
     for organization in sources['repositories']:
-        gh_organization = github3.organization(organization)
-        for repo in gh_organization.iter_repos():
-            repo_url = 'https://github.com/' + organization + '/' + repo.name + '.git'
-            git_repositories['repositories'].append(repo_url)
+        if gh.organization(organization) is not None:
+            gh_organization = github3.organization(organization)
+            for repo in gh_organization.iter_repos():
+                repo_url = 'https://github.com/' + organization + '/' + repo.name + '.git'
+                git_repositories['repositories'].append(repo_url)
 
-        git(git_repositories, env_vars)
+            git(git_repositories, env_vars)
 
-        for repo in gh_organization.iter_repos():
-            cmd_github_part = '--owner '+ organization + ' --repository ' + repo.name + ' -t ' + sources['token']
-            cmd = cmd_gral_part + cmd_github_part
-            os.system(cmd)
+            for repo in gh_organization.iter_repos():
+                cmd_github_part = ' ' + organization + ' ' + repo.name + ' -t ' + sources['token']
+                cmd = cmd_gral_part + cmd_github_part
+                os.system(cmd)
+        else:
+            pass
 
 def meetup(sources, env_vars):
     cmd_gral_part = cmd_composer(env_vars, 'meetup')

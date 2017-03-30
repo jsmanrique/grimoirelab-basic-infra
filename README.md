@@ -16,7 +16,7 @@ It contains a `docker-compose.yml` basic file to set up an elasticsearch and kib
 Run it with:
 ```
 $ docker-compose -d up
-``` 
+```
 
 It also contains a `Dockerfile` to build a docker image to run the analysis. If you want to test it, just build it with:
 
@@ -40,7 +40,7 @@ $ docker run -v /absolute-path-to/data-sources.yml:/settings/data-sources.yml --
 ### Supported data sources
 
 * git
-* GitHub organizations (git and github issues and pull requests)
+* GitHub organizations (git and github issues and pull requests) (*It doesn't support GitHub users, by now*)
 * Meetup
 
 # Contributing
