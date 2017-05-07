@@ -76,6 +76,13 @@ def meetup(sources, env_vars):
         cmd = cmd_gral_part + ' ' + repository + ' -t ' + sources['token'] + ' --tag ' + repository
         os.system(cmd)
 
+def discourse(sources, env_vars):
+    cmd_gral_part = cmd_composer(env_vars, 'discourse')
+
+    for repository in sources['repositories']:
+        cmd = cmd_gral_part + ' ' + repository
+        os.system(cmd)
+
 def exec_analysis(config_data):
 
     data_sources = config_data['sources']
@@ -86,7 +93,8 @@ def exec_analysis(config_data):
         switcher = {
             'git':git,
             'github-org':github,
-            'meetup':meetup
+            'meetup':meetup,
+            'discourse':discourse
         }
 
         get_data = switcher.get(backend)

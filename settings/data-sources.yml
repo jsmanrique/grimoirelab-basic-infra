@@ -1,8 +1,9 @@
 # Data sources config file for simple Grimoire demos #
 sources:                        # Data Sources
   meetup:
-    repositories:               # list of repos
+    repositories:               # list of Meetup group names
       - Mozilla-Community-Madrid
+      - madridjs
     token: 1234abc              # Meetup API Token
   # git:
   #   repositories:               # list of repos
@@ -10,7 +11,10 @@ sources:                        # Data Sources
   github-org:
     repositories:             # List of organizations or users
       - consul
-    token: 1234abc              # GitHub API Token
+    token: 1234abc              # GitHub API Token, for better API rate limit
+  discourse:
+    repositories:               # List of Discourse forums url
+      - https://foro.mozilla-hispano.org/
 environment:                    # Environment Variables
   name: test                    # Project name
   es:
