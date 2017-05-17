@@ -2,6 +2,8 @@
 
 This repository contains some *basic infrastructure* to set up [Grimorie Lab](http://grimoirelab.github.io) analysis. By *basic* I mean, just getting data from some repositories, storing them in a running elasticsearch, and visualizing them using kibana.
 
+If you want a more complete environment, go for [Mordred](https://github.com/grimoirelab/mordred).
+
 ## What is missing?
 
 Some features from the whole **Grimoire Lab** environment are not provided by this basic infraestructure:
@@ -42,6 +44,7 @@ $ docker run -v /absolute-path-to/data-sources.yml:/settings/data-sources.yml --
 * git
 * GitHub organizations (git and github issues and pull requests) (*It doesn't support GitHub users, by now*)
 * Meetup
+* Discourse
 
 # Contributing
 
