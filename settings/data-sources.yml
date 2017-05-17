@@ -1,23 +1,20 @@
 # Data sources config file for simple Grimoire demos #
 sources:                        # Data Sources
-  meetup:
-    repositories:               # list of Meetup group names
-      - Mozilla-Community-Madrid
-      - madridjs
-    token: 1234abc              # Meetup API Token
+  # meetup:
+  #   repositories:               # list of Meetup group names
+  #     - Mozilla-Community-Madrid
+  #   token: 1234abc              # Meetup API Token
   # git:
   #   repositories:               # list of repos
   #     - https://github.com/grimoirelab/GrimoireELK.git
-  github-org:
-    repositories:             # List of organizations or users
-      - consul
-    token: 1234abc              # GitHub API Token, for better API rate limit
+  # github-org:
+  #   repositories:             # List of organizations or users
+  #     - consul
+  #   token: 1234abc              # GitHub API Token, for better API rate limit
   discourse:
     repositories:               # List of Discourse forums url
-      - https://foro.mozilla-hispano.org/
-environment:                    # Environment Variables
-  name: test                    # Project name
-  es:
-    host: localhost             # Elasticsearch host
-    port: 9200                  # Elasticsearch port
-    user:                       # Elasticsearch port
+      # - https://foro.mozilla-hispano.org/
+      - https://forum.kaltura.org/
+environment:                                          # Environment Variables
+  name: Kaltura                                       # Project name
+  es_host: http://localhost:9200                      # http://user:pass@host:port
