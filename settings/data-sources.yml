@@ -1,20 +1,20 @@
-# Data sources config file for simple Grimoire demos #
-sources:                        # Data Sources
-  # meetup:
-  #   repositories:               # list of Meetup group names
-  #     - Mozilla-Community-Madrid
-  #   token: 1234abc              # Meetup API Token
-  # git:
-  #   repositories:               # list of repos
-  #     - https://github.com/grimoirelab/GrimoireELK.git
-  # github-org:
-  #   repositories:             # List of organizations or users
-  #     - consul
-  #   token: 1234abc              # GitHub API Token, for better API rate limit
+# Configuration file for simple Grimoire Lab demos #
+sources:                                              # Data Sources
+  meetup:
+    repositories:                                     # list of Meetup group names
+      - madridjs
+      - Node-js-Madrid
+    token: *******                                    # Meetup API Token. https://secure.meetup.com/meetup_api/key/
+  git:
+    repositories:                                     # list of repos
+      - https://github.com/jsmanrique/grimoirelab-basic-infra.git
+  github-org:
+    repositories:                                     # List of GitHub Organizations
+      - madridjs
+    token: *******                                    # GitHub API Token, for better API rate limit. https://github.com/blog/1509-personal-api-tokens
   discourse:
-    repositories:               # List of Discourse forums url
-      # - https://foro.mozilla-hispano.org/
-      - https://forum.kaltura.org/
+    repositories:                                     # List of Discourse forums url
+      - https://foro.mozilla-hispano.org/
 environment:                                          # Environment Variables
-  name: Kaltura                                       # Project name
-  es_host: http://localhost:9200                      # http://user:pass@host:port
+  name: Kaltura                                       # Project name. Generated ES indexes would be named name_source
+  es_host: http://localhost:9200                      # Elasticsearch host, described as http://user:pass@host:port
