@@ -45,7 +45,7 @@ def git(sources, env_vars):
         cmd = cmd_gral_part + ' ' + repository
         os.system(cmd)
 
-def github(sources, env_vars):
+def github_org(sources, env_vars):
 
     cmd_gral_part = cmd_composer(env_vars, 'github')
 
@@ -68,6 +68,24 @@ def github(sources, env_vars):
                 os.system(cmd)
         else:
             pass
+
+def github(sources, env_vars):
+
+    cmd_gral_part = cmd_composer(env_vars, 'github')
+
+    git_repositories = {'repositories':[]}
+
+    for repository in sources['repositories']:
+        repo_url = 'https://github.com/' + repository + '.git'
+        git_repositories['repositories'].append(repo_url)
+
+    git(git_repositories, env_vars)
+
+    for repository in sources['repositories']:
+        owner, repo_name = repository.split('/')
+        cmd_github_part = ' ' + owner + ' ' + repo_name + ' -t ' + sources['token']
+        cmd = cmd_gral_part + cmd_github_part
+        os.system(cmd)
 
 def meetup(sources, env_vars):
     cmd_gral_part = cmd_composer(env_vars, 'meetup')
@@ -92,7 +110,8 @@ def exec_analysis(config_data):
     for backend in data_sources:
         switcher = {
             'git':git,
-            'github-org':github,
+            'github-org':github_org,
+            'github':github
             'meetup':meetup,
             'discourse':discourse
         }

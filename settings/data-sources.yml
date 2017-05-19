@@ -1,20 +1,24 @@
 # Configuration file for simple Grimoire Lab demos #
 sources:                                              # Data Sources
-  meetup:
+  meetup:                                             # To analyze Meetup groups activity
     repositories:                                     # list of Meetup group names
       - madridjs
       - Node-js-Madrid
     token: *******                                    # Meetup API Token. https://secure.meetup.com/meetup_api/key/
-  git:
+  git:                                                # To analyze git repositories activity (commits)
     repositories:                                     # list of repos
       - https://github.com/jsmanrique/grimoirelab-basic-infra.git
-  github-org:
+  github:                                             # To analyze GitHub repositories activity (commits, issues, PRs)
+    repositories:
+      - jsmanrique/zasca                              # List of GitHub repositories (owner/repo format)
+    token: *******                                    # GitHub API Token, for better API rate limit. https://github.com/blog/1509-personal-api-tokens
+  github-org:                                         # To analyze GitHub organizations repositories activity (commits, issues, PRs)
     repositories:                                     # List of GitHub Organizations
       - madridjs
     token: *******                                    # GitHub API Token, for better API rate limit. https://github.com/blog/1509-personal-api-tokens
-  discourse:
+  discourse:                                          # To analyze Discourse forums activity (questions)
     repositories:                                     # List of Discourse forums url
       - https://foro.mozilla-hispano.org/
 environment:                                          # Environment Variables
-  name: Kaltura                                       # Project name. Generated ES indexes would be named name_source
+  name: project                                       # Project name. Generated ES indexes would be named name_source
   es_host: http://localhost:9200                      # Elasticsearch host, described as http://user:pass@host:port
