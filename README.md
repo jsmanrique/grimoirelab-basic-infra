@@ -41,8 +41,9 @@ $ docker run -v /absolute-path-to/data-sources.yml:/settings/data-sources.yml --
 
 ### Supported data sources
 
-* git
-* GitHub organizations (git and github issues and pull requests) (*It doesn't support GitHub users, by now*)
+* git (commits)
+* GitHub repositories (commits, github issues and pull requests)
+* GitHub organizations (commits, github issues and pull requests) (*It doesn't support GitHub users, by now*)
 * Meetup
 * Discourse
 
