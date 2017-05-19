@@ -9,9 +9,10 @@ sources:                                              # Data Sources
     repositories:                                     # list of repos
       - https://github.com/jsmanrique/grimoirelab-basic-infra.git
   github:                                             # To analyze GitHub repositories activity (commits, issues, PRs)
-    repositories:
-      - jsmanrique/zasca                              # List of GitHub repositories (owner/repo format)
-    token: *******                                    # GitHub API Token, for better API rate limit. https://github.com/blog/1509-personal-api-tokens
+    repositories:                                     # List of GitHub repositories (owner/repo format)
+      - jsmanrique/zasca
+      - jsmanrique/grimoirelab-basic-infra
+    token: *********                                  # GitHub API Token, for better API rate limit. https://github.com/blog/1509-personal-api-tokens
   github-org:                                         # To analyze GitHub organizations repositories activity (commits, issues, PRs)
     repositories:                                     # List of GitHub Organizations
       - madridjs

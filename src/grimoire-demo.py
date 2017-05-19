@@ -111,7 +111,7 @@ def exec_analysis(config_data):
         switcher = {
             'git':git,
             'github-org':github_org,
-            'github':github
+            'github':github,
             'meetup':meetup,
             'discourse':discourse
         }
