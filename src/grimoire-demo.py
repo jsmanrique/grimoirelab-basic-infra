@@ -91,7 +91,7 @@ def meetup(sources, env_vars):
     cmd_gral_part = cmd_composer(env_vars, 'meetup')
 
     for repository in sources['repositories']:
-        cmd = cmd_gral_part + ' ' + repository + ' -t ' + sources['token'] + ' --tag ' + repository
+        cmd = cmd_gral_part + ' ' + repository + ' -t ' + sources['token'] + ' --tag ' + repository + ' --sleep-for-rate'
         os.system(cmd)
 
 def discourse(sources, env_vars):
